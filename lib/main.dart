@@ -10,7 +10,13 @@ class BMICalculator extends StatelessWidget {
         appBarTheme: AppBarTheme(
           backgroundColor: Color(0xFF0B0D22),
         ),
-
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          // brightness: brightness,
+          primary: Color(0xFF0B0D22),
+          // onPrimary: onPrimary,
+          secondary: Colors.purple,
+        ),
+        scaffoldBackgroundColor: Color(0xFF0B0D22),
       ),
       home: InputPage(),
     );
@@ -35,8 +41,9 @@ class _InputPageState extends State<InputPage> {
       ),
       floatingActionButton: TextButton(
         child: Icon(Icons.add),
-
-        onPressed: (){print('press');},
+        onPressed: () {
+          print('press');
+        },
       ),
     );
   }
