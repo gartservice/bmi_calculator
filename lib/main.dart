@@ -7,7 +7,9 @@ class BMICalculator extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.amber,
+        colorScheme: ColorScheme.light(
+          primary: Color(0xFF0A0E21),
+        ),
 
       ),
       home: InputPage(),
