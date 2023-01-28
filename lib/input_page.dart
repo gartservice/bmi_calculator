@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+const bottomButtonHeight = 80.0;
+const colorForCards = Color(0xFF1D1E33);
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -17,10 +19,10 @@ class _InputPageState extends State<InputPage> {
             child: Row(             
               children: [
                 Expanded(
-                  child: ReusableCard(colour: Color(0xFF1D1E33)),
+                  child: ReusableCard(colour: colorForCards),
                 ),
                 Expanded(
-                  child: ReusableCard(colour: Color(0xFF1D1E33)),
+                  child: ReusableCard(colour: colorForCards),
                 ),
               ],
             ),
@@ -29,7 +31,7 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colour: Color(0xFF1D1E33)),
+                  child: ReusableCard(colour: colorForCards),
                 ),
 
               ],
@@ -39,23 +41,25 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colour: Color(0xFF1D1E33)),
+                  child: ReusableCard(colour: colorForCards),
                 ),
                 Expanded(
-                  child: ReusableCard(colour: Color(0xFF1D1E33)),
+                  child: ReusableCard(colour: colorForCards),
                 ),
               ],
             ),
           ),
+          Container(
+            height: bottomButtonHeight,
+            color: Colors.red,
+            width: double.infinity,
+            margin: EdgeInsets.only(top: 10.0),
+
+          )
         ],
       ),
 
-      floatingActionButton: TextButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          print('press');
-        },
-      ),
+
     );
   }
 }
