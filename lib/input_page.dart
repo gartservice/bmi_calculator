@@ -37,30 +37,26 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: GestureDetector(
-                    onTap: (){
+                  child: ReusableCard(
+                    onPress: (){
                       setState(() {
                         selectedGender=Gender.male;
                       });
                     },
-                    child: ReusableCard(
-                      cardChild: IconContent(icon: FontAwesomeIcons.mars, text: 'Male'),
-                      colour: selectedGender == Gender.male?activeCardColour:inactiveCardColor,
+                    cardChild: IconContent(icon: FontAwesomeIcons.mars, text: 'Male'),
+                    colour: selectedGender == Gender.male?activeCardColour:inactiveCardColor,
 
-                    ),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: (){
+                  child: ReusableCard(
+                    onPress: (){
                       setState(() {
                         selectedGender=Gender.female;
                       });
                     },
-                    child: ReusableCard(
-                      colour: selectedGender== Gender.female?activeCardColour:inactiveCardColor,
-                      cardChild: IconContent(icon: FontAwesomeIcons.venus, text: 'Female'),
-                    ),
+                    colour: selectedGender== Gender.female?activeCardColour:inactiveCardColor,
+                    cardChild: IconContent(icon: FontAwesomeIcons.venus, text: 'Female'),
                   ),
                 ),
               ],
@@ -71,6 +67,9 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
+                    onPress: (){
+
+                    },
                     colour: activeCardColour,
                     cardChild: Column(
                       children: [
@@ -94,6 +93,9 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
+                    onPress: (){
+
+                    },
                     colour: activeCardColour,
                     cardChild: Column(
                       children: [
@@ -111,6 +113,9 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(colour: activeCardColour,
+                    onPress: (){
+
+                    },
                     cardChild: Column(
                       children: [
                         Icon(
