@@ -9,3 +9,15 @@ const kLabelTextStyle =  TextStyle(
   fontSize: 18.0,
   color: Color(0xFF8D8E98),
 );
+
+const kNumberTextStyle = TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.w900,
+);
+
+//Constants for Height slider
+const kStartHeight = 180;
+const kMinHeight = 120;
+const kMaxHeight = 230;
+const kSliderActiveColor = Color(0xFFEB1555);
+const kSliderInactiveColor = Color(0xFF8D8E98);
