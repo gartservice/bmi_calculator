@@ -17,7 +17,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender = Gender.notSelected;
-
+  int height = kStartHeight;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,6 +69,7 @@ class _InputPageState extends State<InputPage> {
                     onPress: () {},
                     colour: kActiveCardColour,
                     cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
                           height: 10,
@@ -78,13 +79,34 @@ class _InputPageState extends State<InputPage> {
                           style: kLabelTextStyle,
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
                           children: [
                             Text(
-                              '180',
-                              style: TextStyle(
-                                  fontSize: 50.0, fontWeight: FontWeight.w900),
+                              height.toString(),
+                              style: kNumberTextStyle,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'cm',
+                              style: kLabelTextStyle,
                             ),
                           ],
+                        ),
+                        Slider(
+                            value: height.toDouble(),
+                            min: kMinHeight.toDouble(),
+                            max: kMaxHeight.toDouble(),
+                            activeColor: kSliderActiveColor,
+                            inactiveColor: kSliderInactiveColor,
+                            onChanged: (double newValue){
+                              setState(() {
+                                height = newValue.round();
+                              });
+                            },
                         ),
                       ],
                     ),
