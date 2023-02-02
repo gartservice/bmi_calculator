@@ -38,7 +38,7 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     cardChild:
-                        IconContent(icon: FontAwesomeIcons.mars, text: 'Male'),
+                    IconContent(icon: FontAwesomeIcons.mars, text: 'Male'),
                     colour: selectedGender == Gender.male
                         ? kActiveCardColour
                         : kInactiveCardColor,
@@ -63,108 +63,118 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: Row(
+                children: [
+            Expanded(
+            child: ReusableCard(
+            onPress: () {},
+            colour: kActiveCardColour,
+            cardChild: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
-                  child: ReusableCard(
-                    onPress: () {},
-                    colour: kActiveCardColour,
-                    cardChild: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          'HEIGHT',
-                          style: kLabelTextStyle,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.baseline,
-                          textBaseline: TextBaseline.alphabetic,
-                          children: [
-                            Text(
-                              height.toString(),
-                              style: kNumberTextStyle,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'cm',
-                              style: kLabelTextStyle,
-                            ),
-                          ],
-                        ),
-                        Slider(
-                            value: height.toDouble(),
-                            min: kMinHeight.toDouble(),
-                            max: kMaxHeight.toDouble(),
-                            activeColor: kSliderActiveColor,
-                            inactiveColor: kSliderInactiveColor,
-                            onChanged: (double newValue){
-                              setState(() {
-                                height = newValue.round();
-                              });
-                            },
-                        ),
-                      ],
-                    ),
-                  ),
+              SizedBox(
+              height: 10,
+            ),
+            Text(
+              'HEIGHT',
+              style: kLabelTextStyle,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.baseline,
+              textBaseline: TextBaseline.alphabetic,
+              children: [
+                Text(
+                  height.toString(),
+                  style: kNumberTextStyle,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'cm',
+                  style: kLabelTextStyle,
                 ),
               ],
             ),
+            SliderTheme(
+              data: SliderTheme.of(context).copyWith(
+                activeTrackColor: Colors.white,
+                thumbColor: Color(0xFFEB1555),
+                overlayColor: Color(0x1FEB1555),
+                thumbShape: RoundSliderThumbShape(enabledThumbRadius: 14.0),
+                overlayShape: RoundSliderOverlayShape(overlayRadius: 29.0),
+              ),
+            child: Slider(
+            value: height.toDouble(),
+            min: kMinHeight.toDouble(),
+            max: kMaxHeight.toDouble(),
+            // activeColor: kSliderActiveColor,
+            inactiveColor: kSliderInactiveColor,
+            onChanged: (double newValue) {
+              setState(() {
+                height = newValue.round();
+              });
+            },
           ),
-          Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  child: ReusableCard(
-                    onPress: () {},
-                    colour: kActiveCardColour,
-                    cardChild: Column(
-                      children: [
-                        Icon(
-                          FontAwesomeIcons.mars,
-                          size: 80.0,
-                        ),
-                        SizedBox(
-                          height: 15.0,
-                        ),
-                        Text('Male')
-                      ],
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: ReusableCard(
-                    colour: kActiveCardColour,
-                    onPress: () {},
-                    cardChild: Column(
-                      children: [
-                        Icon(
-                          FontAwesomeIcons.mars,
-                          size: 80.0,
-                        ),
-                        SizedBox(
-                          height: 15.0,
-                        ),
-                        Text('Male')
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
           ),
-          Container(
-            height: kBottomButtonHeight,
-            color: kBottomContainerColour,
-            width: double.infinity,
-            margin: EdgeInsets.only(top: 10.0),
-          )
+
         ],
       ),
+    ),
+    ),
+    ],
+    ),
+    ),
+    Expanded(
+    child: Row(
+    children: [
+    Expanded(
+    child: ReusableCard(
+    onPress: () {},
+    colour: kActiveCardColour,
+    cardChild: Column(
+    children: [
+    Icon(
+    FontAwesomeIcons.mars,
+    size: 80.0,
+    ),
+    SizedBox(
+    height: 15.0,
+    ),
+    Text('Male')
+    ],
+    ),
+    ),
+    ),
+    Expanded(
+    child: ReusableCard(
+    colour: kActiveCardColour,
+    onPress: () {},
+    cardChild: Column(
+    children: [
+    Icon(
+    FontAwesomeIcons.mars,
+    size: 80.0,
+    ),
+    SizedBox(
+    height: 15.0,
+    ),
+    Text('Male')
+    ],
+    ),
+    ),
+    ),
+    ],
+    ),
+    ),
+    Container(
+    height: kBottomButtonHeight,
+    color: kBottomContainerColour,
+    width: double.infinity,
+    margin: EdgeInsets.only(top: 10.0),
+    )
+    ],
+    ),
     );
   }
 }
