@@ -41,7 +41,7 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     cardChild:
-                        IconContent(icon: FontAwesomeIcons.mars, text: 'Male'),
+                    IconContent(icon: FontAwesomeIcons.mars, text: 'Male'),
                     colour: selectedGender == Gender.male
                         ? kActiveCardColour
                         : kInactiveCardColor,
@@ -105,9 +105,9 @@ class _InputPageState extends State<InputPage> {
                             thumbColor: Color(0xFFEB1555),
                             overlayColor: Color(0x1FEB1555),
                             thumbShape:
-                                RoundSliderThumbShape(enabledThumbRadius: 14.0),
+                            RoundSliderThumbShape(enabledThumbRadius: 14.0),
                             overlayShape:
-                                RoundSliderOverlayShape(overlayRadius: 29.0),
+                            RoundSliderOverlayShape(overlayRadius: 29.0),
                           ),
                           child: Slider(
                             value: height.toDouble(),
@@ -153,10 +153,10 @@ class _InputPageState extends State<InputPage> {
                             TextButton(
                               onPressed: () {},
                               child: Icon(Icons.add),
-                              style: ButtonStyle(
-                                backgroundColor: ,
+
+
                               ),
-                            ),
+
                             SizedBox(
                               width: 10.0,
                             ),
@@ -199,6 +199,29 @@ class _InputPageState extends State<InputPage> {
           )
         ],
       ),
+    );
+  }
+}
+
+class RoundIconButton extends StatelessWidget {
+  final Widget child;
+  RoundIconButton({required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      child: child,
+      onPressed: () {},
+      elevation: 6.0,
+      constraints: BoxConstraints(
+          minWidth: 88.0,
+          minHeight: 36.0
+      ),
+      shape: CircleBorder(),
+      fillColor: Color(0xFF4C4F5E),
+
+    
+
     );
   }
 }
