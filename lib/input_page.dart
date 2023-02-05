@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
 import 'reusable_card.dart';
 import 'constants.dart';
+import 'bottom_button.dart';
 
 enum Gender {
   male,
@@ -238,8 +239,6 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
-
-
 
 class RoundIconButton extends StatelessWidget {
   final IconData icon;
