@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'input_page.dart';
+import 'result_page.dart';
 void main() => runApp(BMICalculator());
 
 class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/':(context)=>InputPage(),
+        '/resultPage': (context)=>ResultPage()
+      },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Color(0xFF0B0D22),
@@ -23,7 +29,6 @@ class BMICalculator extends StatelessWidget {
         ),
         scaffoldBackgroundColor: Color(0xFF0B0D22),
       ),
-      home: InputPage(),
     );
   }
 }
