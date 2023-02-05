@@ -227,19 +227,33 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
-            onTap: (){
-              Navigator.pushNamed(context, '/resultPage');
-            },
-            child: Container(
-              child: Text('Calculate'),
-              height: kBottomButtonHeight,
-              color: kBottomContainerColour,
-              width: double.infinity,
-              margin: EdgeInsets.only(top: 10.0),
-            ),
+          BottomButton(
+           onTap: (){
+          Navigator.pushNamed(context, '/resultPage');
+          },
+            text: 'CALCULATE',
           )
         ],
+      ),
+    );
+  }
+}
+
+class BottomButton extends StatelessWidget {
+  final VoidCallback onTap;
+  final String text;
+  BottomButton({required this.onTap, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        child: Text(text),
+        height: kBottomButtonHeight,
+        color: kBottomContainerColour,
+        width: double.infinity,
+        margin: EdgeInsets.only(top: 10.0),
       ),
     );
   }
